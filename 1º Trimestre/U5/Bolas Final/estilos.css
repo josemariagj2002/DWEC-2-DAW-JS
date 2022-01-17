@@ -1,0 +1,69 @@
+#panel{
+    border: black 1px solid;
+}
+
+H1, h2{
+    text-align: center;
+}
+
+body{
+    background-color: grey;
+}
+
+svg{
+    background-color: white;
+}
+
+div{
+    background-color: orange;
+}
+
+#iz{
+    position: relative;
+    bottom: -190px;
+    width: 200px;
+    left: 50px;
+}
+
+#der{
+    position: relative;
+    bottom: 50px;
+    width: 200px;
+    left: 1130px;
+}
+
+#velocidad1{
+    width: 100px;
+    position: relative;
+    bottom: -100px;
+    left: 400px;
+} 
+
+#velocidad2{
+    width: 100px;
+    position: relative;
+    bottom: -105px;
+    left: 400px;
+} 
+
+#velocidad3{
+    width: 100px;
+    position: relative;
+    bottom: -110px;
+    left: 400px;
+} 
+
+#velocidad{
+    width: 150px;
+    position: relative;
+    bottom: -120px;
+    left: 250px;
+}
+
+
+#pausa{
+    position: relative;
+    bottom: 100px;
+    width: 100px;
+    left: 900px;
+}

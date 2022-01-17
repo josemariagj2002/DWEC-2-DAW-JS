@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>
+        </title>
+        <meta charset="UTF-8" http-equiv="content-type" content="text/html">
+        <link rel="stylesheet" media="screen" type="text/css" href="" >
+    </head>
+    <body>
+        <p id = "info"></p>
+        <button id='crearusu'>Crear Sesion</button>
+        <button id="borrarusu">Cerrar Sesion</button><br>
+        <button id='crearp'>Color parrafo</button>
+        <button id="borrarp">Eliminar</button><br>
+    <!--<button id='creartam'>Tamaño letra</button>
+        <button id="borrartam">Eliminar</button><br>
+        <button id='crearcol'>Color fondo</button>
+        <button id="borrarcol">Eliminar</button>-->
+        <script>
+            var cookies
+            update()
+
+            document.getElementById('crearusu').addEventListener('click',(e)=>crearcookie(e,'usuario','Deme un usuario'))
+            document.getElementById('borrarusu'),addEventListener('click',(e)=>borrarcookies(e,'usuario'))
+            document.getElementById('crearp').addEventListener('click',(e)=>crearcookie(e,'colp','color de parrafo'))
+            document.getElementById('borrarp'),addEventListener('click',(e)=>borrarcookies(e,'colp'))
+            /*document.getElementById('creartam').addEventListener('click',(e)=>crearcookie(e,'taml'))
+            document.getElementById('borrartam'),addEventListener('click',(e)=>borrarcookies(e,'taml'))
+            document.getElementById('crearcol').addEventListener('click',(e)=>crearcookie(e,'colb'))
+            document.getElementById('borrarcol'),addEventListener('click',(e)=>borrarcookies(e,'colb'))*/
+
+            function crearcookie(event,tema,msg){
+                event.stopPropagation()
+                let entrada = window.prompt(msg)
+                document.cookie = tema.toString()+"="+encodeURIComponent(entrada)+"; max-age=300"
+                update()
+            }
+
+            function borrarcookies(event,tema){
+                event.stopPropagation()
+                document.cookie=tema + "=; max-age=0"
+                update()
+            }
+            
+            function cocinaCookies(masa){
+                masa = masa.split(';')
+                let resul = {}
+                for (let c of masa){
+                    c=c.trim()
+                    c = c.split('=')
+                    resul[c[0]] = c[1]
+                }
+                return resul
+            }
+            
+            function update(){
+                cookies =  document.cookie
+                if (cookies){
+                    cookies = cocinaCookies(cookies)
+                    
+                }
+            }
+        </script>
+    </body>
+</html>
